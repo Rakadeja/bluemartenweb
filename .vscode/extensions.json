@@ -1,6 +1,10 @@
 {
-  "recommendations": ["svelte.svelte-vscode","dbaeumer.vscode-eslint",
-  "esbenp.prettier-vscode",
-  "EditorConfig.EditorConfig",
-  "bradlc.vscode-tailwindcss"]
+    "recommendations": [
+        "svelte.svelte-vscode",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig",
+        "bradlc.vscode-tailwindcss",
+        "samgiz.vscode-kanbn-boards"
+    ]
 }

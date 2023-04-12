@@ -1,103 +1,46 @@
-# Svelte 3.5 + Storybook 7 + TailwindCSS 3
+# Blue Marten's Website
 
-![Svelte, Storybook & Tailwind](src/assets/social.jpg)
+![npm badge](https://img.shields.io/static/v1?label=npm&message=9.2.0&color=C1312E&style=for-the-badge)
+![node badge](https://img.shields.io/static/v1?label=node&message=19.7.0&color=026E00&style=for-the-badge)
+![react badge](https://img.shields.io/static/v1?label=React&message=^18.2.0&color=149ECA&style=for-the-badge)
+![svelte badge](https://img.shields.io/static/v1?label=Svelte&message=^3.55.1&color=CC3200&style=for-the-badge)
+![tailwind badge](https://img.shields.io/static/v1?label=TailwindCSS&message=^3.2.7&color=38BDF8&style=for-the-badge)
+![storybook badge](https://img.shields.io/static/v1?label=Storybook&message=^7.0.0-beta.51&color=FF4785&style=for-the-badge)
+![license badge](https://img.shields.io/static/v1?label=License&message=MIT&color=3DA639&style=for-the-badge)
 
-Visit the website to see the outcome: [Svelte + Storybook + TailwindCSS](https://sst.sveltehub.dev)
+Website backbone is based off of an implementation of Svelte 3.5, Storybook 7 and TailwindCSS 3. You can find the *original* source code for the template here: [Svelte + Storybook + TailwindCSS Template](https://github.com/jerriclynsjohn/svelte-storybook-tailwind)
 
-```bash
-// Quickstart
+I'd recommend trying the base template before wrestling with my repo. [jerriclynsjohn](https://github.com/jerriclynsjohn) did a great job!
 
-npx degit jerriclynsjohn/svelte-storybook-tailwind my-svelte-project
-cd my-svelte-project
+When the website is further along in development, it will likely have TailwindCSS removed and replaced with more custom CSS. SASS is still available early-on though, since I have never been able to get enough of it!
 
-npm install
-npm run dev
-npm run storybook
-```
+## Usage
 
-This has improved a lot since I started this repo, but I feel that there is still a need to just clone the repo and kickstart the project, so here I am again updating this and I'll keep this repo updated. I also feel that there is a need for a repo which shows some best practices.
+This website is intended to serve as an online presence for an indie game development startup. It has several pages of interest, all in an attempt to cover all the basic needs of a game development company's website.
+It will have a structure similar to this:
 
-> You can easily start your project with this template, instead of wasting time figuring out configurations for each integration.
+- Landing Page (Hero page)
+- Home (Social media feed, news and announcements)
+- Games (Completed projects, webGL games, and links for where to find them)
+- Our Projects (Active and upcoming)
+- Media (Gallery, clips, screenshots)
+- Assets (Freebies, asset store links, templates)
+- Contact Us (Contact form, customer support, marketing and commission information)
 
-[Storybook](https://storybook.js.org/) is an open source tool for developing JavaScript UI components in isolation
+You can find more information about what has and hasn't been implemented yet using the [Kanbn Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=samgiz.vscode-kanbn-boards). Note that this is a fork of the original extension, with some updates.
+
+## Frameworks
 
 [Svelte](https://svelte.dev/) is a component framework that allows you to write highly-efficient, imperative code, that surgically updates the DOM to maintain performance.
 
-[TailwindCSS](https://tailwindcss.com/) is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.
+[TailwindCSS](https://tailwindcss.com/) is a highly customizable, low-level CSS framework that gives you all the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.
 
-## Steps to build
+## Tools
 
-#### Instantiate Svelte + Vite app
+[Storybook](https://storybook.js.org/) is an open source tool for developing JavaScript UI components in isolation.
 
--   Initiate the project using `npm create vite@latest`
--   Select Svelte + Javascript from the CLI
--   You have a basic Svelte + Vite app ready
+[SASS](https://sass-lang.com/) is a stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax.
 
-#### Add Tailwind to the project
+## License
 
--   Install dependencies `npm install -D tailwindcss postcss autoprefixer`
--   Instantiate the tailwind and postcss config files using `npx tailwindcss init -p`
--   Update the tailwind config as shown below to accomodate for Svelte components
-
-```js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-    content: ['./index.html', './src/**/*.{svelte,js,ts}'],
-    theme: {
-        extend: {}
-    },
-    plugins: []
-};
-``;
-```
-
--   Add Tailwind directive to your CSS at `./src/index.css`
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
--   Import CSS into `./src/main.js`
-
-```js
-import './index.css';
-import App from './App.svelte';
-
-const app = new App({
-    target: document.getElementById('app')
-});
-
-export default app;
-```
-
--   With this we have tailwind setup in the project
-
-#### Add storybook and native story format into the project
-
--   Instantiate by running `npx storybook@next init`
--   Hook up TailwindCSS by importing the CSS into `./.storybook/preview.js`
-
-```js
-import '../src/index.css';
-
-export const parameters = {
-    backgrounds: {
-        default: 'light'
-    },
-    actions: {argTypesRegex: '^on[A-Z].*'},
-    controls: {
-        matchers: {
-            color: /(background|color)$/i,
-            date: /Date$/
-        }
-    }
-};
-```
-
--   This completes the setup required for the project
-
-### Best Practices for UI Component Library
-
--   Watchout for this space for more, will be updatin with some good best practises till then do feel free to explore the example UI components used for this website.
+You are free to use, modify and/or redistribute this website under the terms of the MIT license.
